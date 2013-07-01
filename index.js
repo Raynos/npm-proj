@@ -101,7 +101,7 @@ function writeSources(location, sources, callback) {
 
         if (dirname !== "." && dirs.indexOf(dirname) === -1) {
             dirs.push(dirname)
-            var dirLoc = path.join(location, dirname)\
+            var dirLoc = path.join(location, dirname)
 
             mkdirp(dirLoc, write)
         } else {
