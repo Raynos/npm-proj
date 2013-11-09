@@ -43,6 +43,8 @@ allFiles(templateDir, function (err, files) {
             return acc
         }, {})
 
+        process.stdout.write("// created by https://github.com/Raynos/" +
+            "npm-proj/blob/master/bin/compile-template.js\n")
         process.stdout.write("module.exports = " +
             JSON.stringify(hash, null, "    ") + "\n")
     })
