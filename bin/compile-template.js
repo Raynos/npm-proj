@@ -1,6 +1,7 @@
 var fs = require("fs")
 var path = require("path")
 var parallel = require("continuable-para")
+var put = require("dotty").put
 
 var allFiles = require("../lib/all-files")
 
@@ -35,11 +36,14 @@ allFiles(templateDir, function (err, files) {
             if (key === "._gitignore") {
                 key = ".gitignore"
             }
-            acc[key] = tuple.source.split("\n")
+
+            var parts = key.split(path.sep)
+
+            put(acc, parts, tuple.source.split("\n"))
             return acc
         }, {})
 
         process.stdout.write("module.exports = " +
-            JSON.stringify(hash, null, "   ") + "\n")
+            JSON.stringify(hash, null, "    ") + "\n")
     })
 })
