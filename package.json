@@ -24,7 +24,8 @@
     "process": "~0.5.1"
   },
   "devDependencies": {
-    "tape": "~1.0.2"
+    "tape": "~1.0.2",
+    "continuable-para": "~1.2.0"
   },
   "licenses": [
     {
